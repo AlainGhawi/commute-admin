@@ -1,0 +1,42 @@
+<h1 class="page-title">{{ 'dashboard.title' | translate }}</h1>
+
+<div class="stats-grid">
+  <mat-card class="stat-card">
+    <mat-card-content>
+      <mat-icon class="stat-icon">people</mat-icon>
+      <div class="stat-value">{{ stats.totalEmployees }}</div>
+      <div class="stat-label">{{ 'dashboard.totalEmployees' | translate }}</div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="stat-card">
+    <mat-card-content>
+      <mat-icon class="stat-icon">directions_car</mat-icon>
+      <div class="stat-value">{{ stats.activeRides }}</div>
+      <div class="stat-label">{{ 'dashboard.activeRides' | translate }}</div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="stat-card">
+    <mat-card-content>
+      <mat-icon class="stat-icon">trending_up</mat-icon>
+      <div class="stat-value">{{ (stats.matchRate * 100).toFixed(0) }}%</div>
+      <div class="stat-label">{{ 'dashboard.matchRate' | translate }}</div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="stat-card">
+    <mat-card-content>
+      <mat-icon class="stat-icon">eco</mat-icon>
+      <div class="stat-value">{{ stats.co2SavedKg }} kg</div>
+      <div class="stat-label">{{ 'dashboard.co2Saved' | translate }}</div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<h2 class="section-title">{{ 'dashboard.recentActivity' | translate }}</h2>
+<mat-card>
+  <mat-card-content>
+    <p class="placeholder-text">{{ 'common.noData' | translate }}</p>
+  </mat-card-content>
+</mat-card>

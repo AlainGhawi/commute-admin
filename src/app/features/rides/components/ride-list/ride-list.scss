@@ -1,0 +1,31 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.status-scheduled {
+  --mdc-chip-label-text-color: var(--color-status-info);
+}
+
+.status-in-progress {
+  --mdc-chip-label-text-color: var(--color-status-warning);
+}
+
+.status-completed {
+  --mdc-chip-label-text-color: var(--color-primary);
+}
+
+.status-cancelled {
+  --mdc-chip-label-text-color: var(--color-status-error);
+}

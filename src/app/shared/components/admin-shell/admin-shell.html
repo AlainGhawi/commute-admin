@@ -1,0 +1,51 @@
+<mat-sidenav-container class="shell-container">
+  <mat-sidenav [mode]="'side'" [opened]="sidebarOpen()" class="sidebar">
+    <div class="sidebar-header">
+      <span class="material-symbols-outlined brand-icon">commute</span>
+      <span class="brand-name">{{ appName }}</span>
+    </div>
+
+    <mat-nav-list>
+      @for (item of navItems; track item.route) {
+      <a mat-list-item [routerLink]="item.route" routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: item.route === '/' }" [attr.aria-label]="item.labelKey | translate">
+        <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+        <span matListItemTitle>{{ item.labelKey | translate }}</span>
+      </a>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="main-content">
+    <mat-toolbar class="header-toolbar">
+      <button mat-icon-button (click)="toggleSidebar()" aria-label="Toggle sidebar">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <span class="toolbar-spacer"></span>
+
+      <button mat-icon-button (click)="toggleLocale()" [attr.aria-label]="'Toggle language'">
+        <span class="locale-badge">{{ i18n.locale() === 'en' ? 'FR' : 'EN' }}</span>
+      </button>
+
+      <button mat-icon-button (click)="toggleTheme()" [attr.aria-label]="'theme.toggle' | translate">
+        <mat-icon>{{ theme.isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+      </button>
+
+      <button mat-icon-button [matMenuTriggerFor]="userMenu" aria-label="User menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+
+      <mat-menu #userMenu="matMenu">
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>logout</mat-icon>
+          <span>{{ 'nav.logout' | translate }}</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar>
+
+    <main class="page-content">
+      <router-outlet />
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

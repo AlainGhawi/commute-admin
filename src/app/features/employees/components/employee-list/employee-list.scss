@@ -1,0 +1,28 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.page-actions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.full-width {
+  width: 100%;
+}
+
+.status-active {
+  --mdc-chip-label-text-color: var(--color-primary);
+}
+
+.status-inactive {
+  --mdc-chip-label-text-color: var(--color-text-muted);
+}
