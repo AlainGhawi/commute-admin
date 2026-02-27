@@ -1,0 +1,45 @@
+@use 'breakpoints' as *;
+
+// ── Page header: stacks vertically on mobile, row on tablet+ ──
+@mixin page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-6);
+  }
+}
+
+// ── Page actions group: full-width buttons on mobile ──
+@mixin page-actions {
+  display: flex;
+  gap: var(--space-2);
+  width: 100%;
+
+  @include tablet {
+    width: auto;
+    gap: var(--space-3);
+  }
+}
+
+// ── Table scroll wrapper for horizontal overflow on small screens ──
+@mixin table-scroll-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  table {
+    min-width: 600px;
+  }
+}
+
+// ── Touch target minimum size ──
+@mixin touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}

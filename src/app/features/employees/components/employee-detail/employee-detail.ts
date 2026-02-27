@@ -15,9 +15,14 @@ import { TranslatePipe } from '../../../../shared/pipes/translate.pipe';
   styles: [
     `
       .page-title {
-        font-size: 1.5rem;
+        font-size: var(--font-size-page-title);
         font-weight: 600;
-        margin-bottom: var(--space-6);
+        margin-bottom: var(--space-4);
+      }
+      @media (min-width: 768px) {
+        .page-title {
+          margin-bottom: var(--space-6);
+        }
       }
     `,
   ],

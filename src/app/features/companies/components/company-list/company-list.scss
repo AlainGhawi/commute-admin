@@ -1,13 +1,21 @@
+@use 'breakpoints' as *;
+@use 'layout' as *;
+
 .page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--space-6);
+  @include page-header;
 }
 
 .page-title {
-  font-size: 1.5rem;
+  font-size: var(--font-size-page-title);
   font-weight: 600;
+}
+
+.page-actions {
+  @include page-actions;
+}
+
+.table-scroll-wrapper {
+  @include table-scroll-wrapper;
 }
 
 .full-width {

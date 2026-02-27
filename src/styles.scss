@@ -3,6 +3,7 @@
    ======================================== */
 
 @use '@angular/material' as mat;
+@use 'typography';
 
 /* ── Commute Design System Tokens ── */
 :root {
@@ -188,6 +189,16 @@ a {
 button {
   cursor: pointer;
   font-family: inherit;
+}
+
+/* ── Touch Target Minimum ── */
+button,
+a[mat-list-item],
+[mat-icon-button],
+[mat-fab],
+[mat-mini-fab] {
+  min-height: 44px;
+  min-width: 44px;
 }
 
 /* Material Symbols */

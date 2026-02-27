@@ -1,5 +1,9 @@
 <mat-sidenav-container class="shell-container">
-  <mat-sidenav [mode]="'side'" [opened]="sidebarOpen()" class="sidebar">
+  <mat-sidenav
+    [mode]="sidebarMode()"
+    [opened]="sidebarOpen()"
+    (openedChange)="sidebarOpen.set($event)"
+    class="sidebar">
     <div class="sidebar-header">
       <span class="material-symbols-outlined brand-icon">commute</span>
       <span class="brand-name">{{ appName }}</span>
