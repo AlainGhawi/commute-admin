@@ -14,17 +14,17 @@
   --color-primary-50: #f0fdf4;
   --color-accent: #0d9488;
 
-  /* Neutrals */
-  --color-gray-50: #f9fafb;
-  --color-gray-100: #f3f4f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-800: #1f2937;
-  --color-gray-900: #111827;
+  /* Neutrals (Slate scale) */
+  --color-gray-50: #F8FAFC;
+  --color-gray-100: #F1F5F9;
+  --color-gray-200: #E2E8F0;
+  --color-gray-300: #CBD5E1;
+  --color-gray-400: #94A3B8;
+  --color-gray-500: #64748B;
+  --color-gray-600: #475569;
+  --color-gray-700: #334155;
+  --color-gray-800: #1E293B;
+  --color-gray-900: #0F172A;
 
   /* Surfaces */
   --color-surface: #ffffff;
@@ -33,7 +33,7 @@
 
   /* Text */
   --color-text: var(--color-gray-900);
-  --color-text-secondary: var(--color-gray-600);
+  --color-text-secondary: #64748B;
   --color-text-muted: var(--color-gray-400);
 
   /* Spacing scale (4px base) */
@@ -56,6 +56,8 @@
   --font-display: 'Inter', var(--font-sans);
 
   /* Borders & Radius */
+  --color-border: #E2E8F0;
+  --color-border-hover: #CBD5E1;
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
@@ -63,9 +65,11 @@
   --radius-full: 9999px;
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-elevated: 0 4px 12px rgba(0, 0, 0, 0.1);
 
   /* Status colors */
   --color-status-info: #2563eb;
@@ -77,6 +81,10 @@
   --nav-height: 64px;
   --sidebar-width: 260px;
   --sidebar-collapsed-width: 64px;
+
+  /* Sidebar */
+  --sidebar-bg: #FFFFFF;
+  --sidebar-active-bg: #F1F5F9;
 }
 
 /* ── Dark Theme Token Overrides ── */
@@ -88,32 +96,42 @@
   --color-primary-50: rgba(34, 197, 94, 0.1);
   --color-accent: #2dd4bf;
 
-  /* Neutrals (inverted scale) */
-  --color-gray-50: #1a1a2e;
-  --color-gray-100: #1f2937;
-  --color-gray-200: #374151;
-  --color-gray-300: #4b5563;
-  --color-gray-400: #6b7280;
-  --color-gray-500: #9ca3af;
-  --color-gray-600: #d1d5db;
-  --color-gray-700: #e5e7eb;
-  --color-gray-800: #f3f4f6;
-  --color-gray-900: #f9fafb;
+  /* Neutrals (inverted Slate scale) */
+  --color-gray-50: #0F172A;
+  --color-gray-100: #1E293B;
+  --color-gray-200: #334155;
+  --color-gray-300: #475569;
+  --color-gray-400: #64748B;
+  --color-gray-500: #94A3B8;
+  --color-gray-600: #CBD5E1;
+  --color-gray-700: #E2E8F0;
+  --color-gray-800: #F1F5F9;
+  --color-gray-900: #F8FAFC;
 
   /* Surfaces */
-  --color-surface: #121212;
-  --color-surface-alt: #1a1a2e;
-  --color-surface-elevated: #1e1e30;
+  --color-surface: #0F172A;
+  --color-surface-alt: #1E293B;
+  --color-surface-elevated: #334155;
 
   /* Text */
-  --color-text: #f1f5f9;
-  --color-text-secondary: #94a3b8;
-  --color-text-muted: #64748b;
+  --color-text: #F8FAFC;
+  --color-text-secondary: #94A3B8;
+  --color-text-muted: #64748B;
+
+  /* Borders */
+  --color-border: #334155;
+  --color-border-hover: #475569;
+
+  /* Sidebar */
+  --sidebar-bg: #1E293B;
+  --sidebar-active-bg: #334155;
 
   /* Shadows (stronger for dark backgrounds) */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-elevated: 0 4px 12px rgba(0, 0, 0, 0.4);
 
   /* Status colors (brighter for dark backgrounds) */
   --color-status-info: #60a5fa;
@@ -121,36 +139,11 @@
   --color-status-error: #f87171;
 }
 
-/* ── Angular Material M3 Theme ── */
+/* ── Angular Material — Structural Only (no M3 color theme) ── */
+@include mat.core();
+
 html {
   height: 100%;
-  @include mat.theme((
-    color: (
-      primary: mat.$green-palette,
-      tertiary: mat.$cyan-palette,
-      theme-type: light,
-    ),
-    typography: (
-      brand-family: 'Inter, sans-serif',
-      plain-family: 'Inter, sans-serif',
-    ),
-    density: 0,
-  ));
-}
-
-html.dark-theme {
-  @include mat.theme((
-    color: (
-      primary: mat.$green-palette,
-      tertiary: mat.$cyan-palette,
-      theme-type: dark,
-    ),
-    typography: (
-      brand-family: 'Inter, sans-serif',
-      plain-family: 'Inter, sans-serif',
-    ),
-    density: 0,
-  ));
 }
 
 /* ── Reset & Base ── */
@@ -164,7 +157,7 @@ html.dark-theme {
 
 body {
   min-height: 100vh;
-  background: var(--color-surface);
+  background: var(--color-surface-alt);
   color: var(--color-text);
   font-family: var(--font-sans);
   line-height: 1.6;
@@ -208,4 +201,314 @@ a[mat-list-item],
     'wght' 400,
     'GRAD' 0,
     'opsz' 24;
+}
+
+/* ==============================================
+   Material Component Styling — Our Design Tokens
+   ============================================== */
+
+/* ── Cards ── */
+mat-card,
+.mat-mdc-card {
+  background: var(--color-surface) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-card) !important;
+  color: var(--color-text);
+  transition: box-shadow 0.15s ease;
+
+  mat-card-subtitle,
+  .mat-mdc-card-subtitle {
+    color: var(--color-text-secondary);
+  }
+}
+
+/* ── Tables ── */
+table[mat-table],
+.mat-mdc-table {
+  width: 100%;
+  background: var(--color-surface) !important;
+  border-collapse: collapse;
+}
+
+th[mat-header-cell],
+.mat-mdc-header-cell {
+  background: var(--color-surface-alt) !important;
+  color: var(--color-text-secondary) !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--color-border) !important;
+  padding: 12px 16px !important;
+}
+
+td[mat-cell],
+.mat-mdc-cell {
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border) !important;
+  padding: 12px 16px !important;
+}
+
+tr[mat-row]:last-child td[mat-cell],
+.mat-mdc-row:last-child .mat-mdc-cell {
+  border-bottom: none !important;
+}
+
+tr[mat-row]:hover,
+.mat-mdc-row:hover {
+  background: var(--color-surface-alt);
+  transition: background 0.15s ease;
+}
+
+/* ── Toolbar ── */
+mat-toolbar,
+.mat-toolbar {
+  background: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: none !important;
+}
+
+/* ── Buttons — Primary (flat / raised) ── */
+.mat-mdc-unelevated-button.mat-primary,
+.mat-mdc-raised-button.mat-primary {
+  background: var(--color-primary) !important;
+  color: #ffffff !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: var(--color-primary-dark) !important;
+  }
+}
+
+/* ── Buttons — Outlined / Stroked ── */
+.mat-mdc-outlined-button {
+  border: 1px solid var(--color-border) !important;
+  color: var(--color-text) !important;
+  border-radius: var(--radius-md) !important;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: var(--color-surface-alt) !important;
+  }
+}
+
+/* ── Buttons — Icon ── */
+.mat-mdc-icon-button {
+  color: var(--color-text-secondary) !important;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: var(--color-surface-alt) !important;
+  }
+}
+
+/* ── Form Fields (outlined) ── */
+.mat-mdc-form-field {
+  .mdc-notched-outline__leading,
+  .mdc-notched-outline__notch,
+  .mdc-notched-outline__trailing {
+    border-color: var(--color-border) !important;
+    transition: border-color 0.15s ease;
+  }
+
+  &:hover .mdc-notched-outline__leading,
+  &:hover .mdc-notched-outline__notch,
+  &:hover .mdc-notched-outline__trailing {
+    border-color: var(--color-border-hover) !important;
+  }
+
+  .mat-mdc-floating-label {
+    color: var(--color-text-secondary) !important;
+  }
+
+  input.mat-mdc-input-element,
+  .mat-mdc-input-element {
+    color: var(--color-text) !important;
+    caret-color: var(--color-primary);
+  }
+}
+
+.mat-mdc-form-field.mat-focused {
+  .mdc-notched-outline__leading,
+  .mdc-notched-outline__notch,
+  .mdc-notched-outline__trailing {
+    border-color: var(--color-primary) !important;
+  }
+
+  .mat-mdc-floating-label {
+    color: var(--color-primary) !important;
+  }
+}
+
+/* ── Dialogs ── */
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  background: var(--color-surface) !important;
+  border-radius: var(--radius-xl) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.mat-mdc-dialog-title {
+  color: var(--color-text) !important;
+}
+
+.mat-mdc-dialog-content {
+  color: var(--color-text-secondary) !important;
+}
+
+/* ── Menus ── */
+.mat-mdc-menu-panel {
+  background: var(--color-surface) !important;
+  border: 1px solid var(--color-border) !important;
+  box-shadow: var(--shadow-md) !important;
+  border-radius: var(--radius-md) !important;
+}
+
+.mat-mdc-menu-item {
+  color: var(--color-text) !important;
+
+  &:hover {
+    background: var(--color-surface-alt) !important;
+  }
+
+  .mat-icon {
+    color: var(--color-text-secondary) !important;
+  }
+}
+
+/* ── Chips ── */
+.mat-mdc-chip {
+  background: var(--color-surface-alt) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-full) !important;
+  color: var(--color-text);
+
+  .mdc-evolution-chip__text-label {
+    color: inherit !important;
+  }
+}
+
+/* ── Sidenav ── */
+mat-sidenav,
+.mat-sidenav {
+  background: var(--sidebar-bg) !important;
+  border-right: 1px solid var(--color-border) !important;
+}
+
+.mat-sidenav-content,
+mat-sidenav-content {
+  background: var(--color-surface-alt) !important;
+}
+
+/* ── Nav List ── */
+.mat-mdc-list-item {
+  color: var(--color-text) !important;
+
+  .mat-mdc-list-item-icon,
+  .mdc-list-item__start,
+  mat-icon {
+    color: var(--color-primary) !important;
+  }
+
+  &:hover {
+    background: var(--color-surface-alt) !important;
+  }
+}
+
+.mat-mdc-list-item .mdc-list-item__primary-text {
+  color: inherit !important;
+}
+
+/* Hide M3 active indicator pill */
+.mat-mdc-list-item-interactive .mat-mdc-list-item-active-indicator {
+  opacity: 0 !important;
+}
+
+/* ── Paginator ── */
+mat-paginator,
+.mat-mdc-paginator {
+  background: var(--color-surface) !important;
+  color: var(--color-text-secondary) !important;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ── Snackbar ── */
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background: var(--color-gray-800) !important;
+  color: #ffffff !important;
+  border-radius: var(--radius-md) !important;
+}
+
+/* ── Tooltip ── */
+.mat-mdc-tooltip .mdc-tooltip__surface {
+  background: var(--color-gray-800) !important;
+  color: #ffffff !important;
+  border-radius: var(--radius-sm) !important;
+  font-size: 0.75rem;
+}
+
+/* ── Divider ── */
+mat-divider,
+.mat-divider {
+  border-color: var(--color-border) !important;
+}
+
+/* ── Select Panel ── */
+.mat-mdc-select-panel {
+  background: var(--color-surface) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.mat-mdc-option {
+  color: var(--color-text) !important;
+
+  &:hover,
+  &.mdc-list-item--selected {
+    background: var(--color-surface-alt) !important;
+  }
+}
+
+/* ── Tabs ── */
+.mat-mdc-tab:not(.mdc-tab--active) {
+  color: var(--color-text-secondary) !important;
+
+  &:hover {
+    color: var(--color-text) !important;
+  }
+}
+
+.mdc-tab--active,
+.mat-mdc-tab.mdc-tab--active {
+  color: var(--color-primary) !important;
+}
+
+.mat-mdc-tab-header .mdc-tab-indicator__content--underline {
+  border-color: var(--color-primary) !important;
+}
+
+/* ── Slide Toggle ── */
+.mat-mdc-slide-toggle .mdc-switch--selected .mdc-switch__track::after {
+  background: var(--color-primary) !important;
+}
+
+.mat-mdc-slide-toggle .mdc-switch--unselected .mdc-switch__track::after {
+  background: var(--color-gray-300) !important;
+}
+
+/* ── Progress indicators ── */
+.mat-mdc-progress-bar .mdc-linear-progress__bar-inner {
+  border-color: var(--color-primary) !important;
+}
+
+.mat-mdc-progress-bar .mdc-linear-progress__buffer-bar {
+  background-color: var(--color-gray-200) !important;
+}
+
+.mat-mdc-progress-spinner circle {
+  stroke: var(--color-primary) !important;
 }

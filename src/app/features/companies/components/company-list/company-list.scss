@@ -23,13 +23,13 @@
 }
 
 .status-active {
-  --mdc-chip-label-text-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .status-trial {
-  --mdc-chip-label-text-color: var(--color-status-warning);
+  color: var(--color-status-warning);
 }
 
 .status-inactive {
-  --mdc-chip-label-text-color: var(--color-text-muted);
+  color: var(--color-text-muted);
 }

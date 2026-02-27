@@ -19,17 +19,17 @@
 }
 
 .status-scheduled {
-  --mdc-chip-label-text-color: var(--color-status-info);
+  color: var(--color-status-info);
 }
 
 .status-in-progress {
-  --mdc-chip-label-text-color: var(--color-status-warning);
+  color: var(--color-status-warning);
 }
 
 .status-completed {
-  --mdc-chip-label-text-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .status-cancelled {
-  --mdc-chip-label-text-color: var(--color-status-error);
+  color: var(--color-status-error);
 }
