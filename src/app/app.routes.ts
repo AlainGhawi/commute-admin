@@ -1,5 +1,5 @@
 import { type Routes } from '@angular/router';
-import { authGuard } from './core/auth/auth.guard';
+import { authGuard, adminGuard } from './core/auth/auth.guard';
 import { AdminShellComponent } from './shared/components/admin-shell/admin-shell';
 
 export const routes: Routes = [
@@ -20,16 +20,19 @@ export const routes: Routes = [
       },
       {
         path: 'companies',
+        canActivate: [adminGuard],
         loadChildren: () =>
           import('./features/companies/companies.routes').then((m) => m.companiesRoutes),
       },
       {
         path: 'employees',
+        canActivate: [adminGuard],
         loadChildren: () =>
           import('./features/employees/employees.routes').then((m) => m.employeesRoutes),
       },
       {
         path: 'rides',
+        canActivate: [adminGuard],
         loadChildren: () =>
           import('./features/rides/rides.routes').then((m) => m.ridesRoutes),
       },

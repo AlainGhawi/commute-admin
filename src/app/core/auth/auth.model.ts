@@ -1,13 +1,27 @@
+export type UserRole = 'Employee' | 'Admin' | 'SuperAdmin';
+
 export interface AuthUser {
   id: string;
   email: string;
   name: string;
-  role: 'admin' | 'manager';
-  tenantId: string;
-  tenantName: string;
+  role: UserRole;
+  companyId: string;
+  companyName?: string;
 }
 
-export interface LoginCredentials {
+export interface MagicLinkRequest {
   email: string;
-  password: string;
+}
+
+export interface MagicLinkResponse {
+  sent: boolean;
+}
+
+export interface RedeemRequest {
+  token: string;
+}
+
+export interface AuthTokenResponse {
+  accessToken: string;
+  expiresAt: string;
 }

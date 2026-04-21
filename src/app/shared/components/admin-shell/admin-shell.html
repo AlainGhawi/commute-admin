@@ -28,6 +28,13 @@
 
       <span class="toolbar-spacer"></span>
 
+      @if (auth.currentUser(); as user) {
+        <span class="user-pill">
+          <span class="user-name">{{ user.companyName ?? user.email }}</span>
+          <span class="user-role" [class.role-super]="user.role === 'SuperAdmin'">{{ user.role }}</span>
+        </span>
+      }
+
       <button mat-icon-button (click)="toggleLocale()" [attr.aria-label]="'Toggle language'">
         <span class="locale-badge">{{ i18n.locale() === 'en' ? 'FR' : 'EN' }}</span>
       </button>

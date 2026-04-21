@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   useMocks: false,
-  apiUrl: 'https://api.commute-app.com',
+  apiBaseUrl: 'https://commute-api.azurewebsites.net',
 };

@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  useMocks: true,
-  apiUrl: 'https://api.commute-app.com',
+  useMocks: false,
+  apiBaseUrl: 'http://localhost:5246',
 };

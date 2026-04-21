@@ -2,39 +2,66 @@
   <mat-card class="login-card">
     <div class="login-header">
       <span class="material-symbols-outlined brand-icon">commute</span>
-      <h1 class="login-title">{{ 'login.title' | translate }}</h1>
+      <h1 class="login-title">Commute admin</h1>
+      <p class="login-subtitle">Sign in with your work email. We'll send you a one-time link.</p>
     </div>
 
     <mat-card-content>
-      <form (ngSubmit)="onSubmit()" class="login-form">
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>{{ 'login.email' | translate }}</mat-label>
-          <input
-            matInput
-            type="email"
-            [value]="email()"
-            (input)="email.set($any($event.target).value)"
-            required
-          />
-          <mat-icon matPrefix>email</mat-icon>
-        </mat-form-field>
+      @if (state() === 'idle' || state() === 'sending') {
+        <form (ngSubmit)="sendLink()" class="login-form">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Work email</mat-label>
+            <input
+              matInput
+              type="email"
+              required
+              autocomplete="email"
+              [value]="email()"
+              (input)="email.set($any($event.target).value)"
+            />
+            <mat-icon matPrefix>email</mat-icon>
+          </mat-form-field>
 
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>{{ 'login.password' | translate }}</mat-label>
-          <input
-            matInput
-            type="password"
-            [value]="password()"
-            (input)="password.set($any($event.target).value)"
-            required
-          />
-          <mat-icon matPrefix>lock</mat-icon>
-        </mat-form-field>
+          <button mat-flat-button color="primary" type="submit" class="full-width login-btn"
+                  [disabled]="state() === 'sending' || email().trim().length === 0">
+            @if (state() === 'sending') { Sending... } @else { Send sign-in link }
+          </button>
+        </form>
+      } @else if (state() === 'sent') {
+        <div class="login-instructions">
+          <p>Check your inbox — we sent a sign-in link to <strong>{{ email() }}</strong>.</p>
+          <p class="login-hint">In development, the API logs the link to the server console. Paste the token below to finish signing in.</p>
 
-        <button mat-flat-button color="primary" type="submit" class="full-width login-btn">
-          {{ 'login.submit' | translate }}
-        </button>
-      </form>
+          <form (ngSubmit)="redeem()" class="login-form">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Magic link token</mat-label>
+              <input
+                matInput
+                type="text"
+                [value]="token()"
+                (input)="token.set($any($event.target).value)"
+              />
+              <mat-icon matPrefix>vpn_key</mat-icon>
+            </mat-form-field>
+            <button mat-flat-button color="primary" type="submit" class="full-width login-btn"
+                    [disabled]="token().trim().length === 0">
+              Continue
+            </button>
+            <button mat-button type="button" class="full-width" (click)="reset()">Use a different email</button>
+          </form>
+        </div>
+      } @else if (state() === 'redeeming') {
+        <div class="login-loading">
+          <mat-progress-spinner mode="indeterminate" diameter="32"></mat-progress-spinner>
+          <p>Verifying your link...</p>
+        </div>
+      } @else if (state() === 'error') {
+        <div class="login-error">
+          <mat-icon color="warn">error</mat-icon>
+          <p>{{ errorMessage() }}</p>
+          <button mat-button (click)="reset()">Try again</button>
+        </div>
+      }
     </mat-card-content>
   </mat-card>
 </div>

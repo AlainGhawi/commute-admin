@@ -29,3 +29,40 @@
 .status-inactive {
   color: var(--color-text-muted);
 }
+
+.loading-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+}
+
+.result-card,
+.error-card {
+  margin-bottom: var(--space-3);
+
+  mat-card-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+}
+
+.error-list {
+  width: 100%;
+  margin: var(--space-2) 0 0 0;
+  padding-left: var(--space-4);
+  color: var(--color-error, #dc2626);
+  font-size: 0.85rem;
+}
+
+.profile-ok { color: var(--color-primary); }
+.profile-pending { color: var(--color-warning, #d97706); }
+
+.table-footer {
+  text-align: right;
+  margin: var(--space-2) var(--space-4) 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}

@@ -33,3 +33,42 @@
 .status-cancelled {
   color: var(--color-status-error);
 }
+
+.page-actions {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.loading-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+}
+
+.error-card {
+  margin-bottom: var(--space-3);
+
+  mat-card-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+}
+
+.empty {
+  text-align: center;
+  padding: var(--space-6);
+  color: var(--color-text-muted);
+}
+
+.mono { font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 0.85rem; }
+.num { text-align: right; }
+
+.table-footer {
+  text-align: right;
+  margin: var(--space-2) var(--space-4) 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}

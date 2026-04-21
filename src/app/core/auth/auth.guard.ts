@@ -5,10 +5,19 @@ import { AuthService } from './auth.service';
 export const authGuard: CanActivateFn = () => {
   const auth = inject(AuthService);
   const router = inject(Router);
+  return auth.isAuthenticated() ? true : router.createUrlTree(['/login']);
+};
 
-  if (auth.isAuthenticated()) {
-    return true;
-  }
+export const adminGuard: CanActivateFn = () => {
+  const auth = inject(AuthService);
+  const router = inject(Router);
+  if (!auth.isAuthenticated()) return router.createUrlTree(['/login']);
+  return auth.isAdmin() ? true : router.createUrlTree(['/']);
+};
 
-  return router.createUrlTree(['/login']);
+export const superAdminGuard: CanActivateFn = () => {
+  const auth = inject(AuthService);
+  const router = inject(Router);
+  if (!auth.isAuthenticated()) return router.createUrlTree(['/login']);
+  return auth.isSuperAdmin() ? true : router.createUrlTree(['/']);
 };
